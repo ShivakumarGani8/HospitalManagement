@@ -9,7 +9,7 @@ public class DoctorDAO {
 
     public void addDoctor(Doctor doctor) {
         try (
-        	Connection connection = HospitalDataBase.getConnection();
+        	Connection connection = HospitalDataBase.getDBConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(insertDoctor)) {
             preparedStatement.setString(1, doctor.getFirstName());
             preparedStatement.setString(2, doctor.getMiddleName());

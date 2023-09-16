@@ -1,16 +1,35 @@
 package com.databse;
 
 import java.sql.*;
+
 public class HospitalDataBase {
-	    private static final String URL = "jdbc:mysql://localhost:3306/hospital";
-	    private static final String USERNAME = "root";
-	    private static final String PASSWORD = "root";
+	    private static final String url = "jdbc:mysql://localhost:3306/hospital";
+	    private static final String userName= "root";
+	    private static final String password = "root";
 	    static Connection connection=null;
 	    
-	    public static Connection getConnection() throws SQLException {
-	    	if(connection==null){
-	    		connection=DriverManager.getConnection(URL, USERNAME, PASSWORD);
-	    	}
-	        return connection; 
-	    }
+		
+		// Sets database connection
+		private void setDBConnection() {
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				connection = DriverManager.getConnection(url, userName, password);
+				System.out.println("Database connection successfull !");
+			} catch (Exception e) {
+				e.printStackTrace();
+//				System.out.println("Database connection failed !");
+			}
+			
+		}
+
+		// To get the database connection in other  classes
+		public static Connection getDBConnection() {
+			if (connection != null) {
+				System.out.println("DB connection object: "+connection);
+				return connection;
+			} else {
+				new HospitalDataBase().setDBConnection();
+				return connection;
+			}
+		}
 }

@@ -1,23 +1,26 @@
 body {
-    font-family: Arial, sans-serif;
-    margin-top: 0;   
+    font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+  background: #3AAFAB;
+  color: #fff;
+  padding: 20px 0;
 }
 .mandatory{
     color:red;
     font-size: 1.5rem;
 }
-h1 {
+/* h1 {
     background-color: #007BFF;
     color: white;
     padding: 10px;
     top: 0;
     margin-top:0px;
     position: sticky;
-}
+} */
 
 form{
     width: 50%;
-    margin: 10px auto ;
+    margin: 5px auto ;
+    padding: 20px;
 }
 .form-group {
     margin-bottom: 20px;
@@ -26,19 +29,18 @@ form{
 }
 .form-group label{
     width: 200px;
+    box-sizing: border-box;
 }
-
 label {
     display: block;
     margin-bottom: 5px;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 select,
 textarea {
-    width: 100%;
+    width: 75%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;

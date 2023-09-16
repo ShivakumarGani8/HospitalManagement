@@ -1,15 +1,13 @@
 function showIframe(page){
-    const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('.navButtons');
     buttons.forEach(button => {
-    button.style.backgroundColor="rgb(52 52 100)";
-    button.style.fontWeight="600";
-    button.style.border="none";
+        button.style.color="white";
 });
 
     // Highlight the clicked button
     const clickedButton = document.getElementById(page);
-    clickedButton.style.fontWeight = '800';
-    clickedButton.style.border="2px solid white";
+    clickedButton.style.textDecoration="underline";
+    clickedButton.style.color="gold";
 
     
     switch(page){
@@ -19,7 +17,5 @@ function showIframe(page){
         break;
         case 'patientPage' : document.getElementById('formElement').src = "./add_patient.html";
     }
-    document.getElementById("formElement").style.display = "block";
-
-    
+    document.getElementById("formElement").style.display = "block"; 
 }
